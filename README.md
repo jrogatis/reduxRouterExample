@@ -1,4 +1,6 @@
+### A Redux Router Simple Ex.
 
+The goal of this project is a simple study for in deph properties of redux-router
 
 ### Getting Started
 
