@@ -1,4 +1,6 @@
 module.exports = {
+  devtool: 'source-map',
+  mode: 'development',
   entry: ['./src/index.js'],
   output: {
     path: __dirname,
@@ -6,20 +8,15 @@ module.exports = {
     filename: 'bundle.js',
   },
   module: {
-    loaders: [
+    rules: [
       {
-        exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: ['react', 'latest'],
-        },
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        use: 'babel-loader',
       },
     ],
   },
-  resolve: {
-    extensions: ['', '.js', '.jsx'],
-  },
-  devtool: 'source-map',
+
   devServer: {
     historyApiFallback: true,
     contentBase: './',
