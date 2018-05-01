@@ -1,0 +1,73 @@
+{
+  "name": "redux-simple-starter",
+  "version": "1.0.0",
+  "description": "Simple starter package for Redux with React and Babel support",
+  "main": "index.js",
+  "repository": "git@github.com:jrogatis/reduxSampleApp.git",
+  "lint-staged": {
+    "*.js": [
+      "pretty-quick --staged",
+      "npm run fix",
+      "git add"
+    ],
+    "*.json": [
+      "pretty-quick --staged",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
+    "test:watch": "npm run test -- --watch",
+    "precommit": "lint-staged",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "lint-verbose": "DEBUG=eslint:cli-engine eslint .",
+    "prettier": "npx prettier --config ./.prettierrc --write './**/*.js'",
+    "fix": "npx eslint . --fix"
+  },
+  "author": "Jean Phiilp de Rogatis",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^6.1.3",
+    "@commitlint/config-conventional": "^6.1.3",
+    "babel-core": "^6.2.1",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^6.2.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.1.18",
+    "chai": "^3.5.0",
+    "chai-jquery": "^2.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-flowtype": "^2.46.3",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-mocha": "^4.11.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.2.1",
+    "husky": "^0.14.3",
+    "jquery": "^2.2.1",
+    "jsdom": "^8.1.0",
+    "lint-staged": "^7.0.5",
+    "mocha": "^2.4.5",
+    "prettier": "^1.12.1",
+    "pretty-quick": "^1.4.1",
+    "react-addons-test-utils": "^0.14.7",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "lodash": "^3.10.1",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-redux": "4.3.0",
+    "react-router": "^2.0.1",
+    "react-router-dom": "^4.0.0",
+    "react-sparklines": "^1.6.0",
+    "redux": "^3.0.4",
+    "redux-promise": "^0.5.3"
+  }
+}
